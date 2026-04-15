@@ -18,6 +18,15 @@ filtered_df = df[
 
 # Title
 st.title("Impact of Inflation on Construction Costs")
+st.caption("Use the year slider to explore how inflation and construction costs change over time.")
+st.subheader("Project Motivation")
+
+st.write(
+    "Rising inflation has significantly impacted the construction industry, affecting material prices, labor costs, and overall project budgets. "
+    "For project managers and construction firms, understanding how inflation influences costs is critical for accurate budgeting and planning.\n\n"
+
+    "This project aims to analyze the relationship between inflation and construction costs in the United States, helping stakeholders make more informed financial and strategic decisions."
+)
 st.write(
     "This dashboard explores how inflation affected construction costs in the United States from 2015 to 2025. "
     "The project is designed for project managers, estimators, and construction firms that need to understand how inflation can influence budgeting, pricing, and planning decisions. "
@@ -51,15 +60,29 @@ correlation = filtered_df["inflation_index"].corr(filtered_df["construction_inde
 st.write(f"Correlation coefficient (r): {correlation:.2f}")
 
 st.write("This value indicates a strong positive relationship between inflation and construction costs.")
+st.subheader("Key Insight")
 
-st.subheader("Conclusion")
+st.write(
+    "The strongest finding from this analysis is the clear positive relationship between inflation and construction costs. "
+    "As inflation increases, construction costs consistently rise as well.\n\n"
+
+    "This suggests that inflation is a major driver of cost increases in the construction industry, "
+    "which directly impacts budgeting, project planning, and financial forecasting."
+)
+st.subheader("Results")
 
 st.write(
     "The analysis reveals a strong positive relationship between inflation and construction costs, as supported by both the visual trends and the correlation coefficient. "
     "As inflation increases, construction costs tend to rise as well, particularly in the years following 2020 where a sharp increase is observed. "
     "This indicates that inflation plays a significant role in driving construction expenses and should be carefully considered in project budgeting and planning."
 )
+st.subheader("Limitations & Next Steps")
 
+st.write(
+    "This project focuses on the relationship between inflation and construction costs using a limited set of economic indicators. "
+    "Other important factors such as labor shortages, regional differences, supply chain disruptions, tariffs, and interest rates were not included. "
+    "Future work could expand the analysis by adding more variables, comparing regions, or developing a forecasting model to predict future construction cost changes."
+)
 
 st.subheader("Data Collection & Preprocessing")
 
