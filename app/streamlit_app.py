@@ -32,23 +32,26 @@ st.write(
     "The project is designed for project managers, estimators, and construction firms that need to understand how inflation can influence budgeting, pricing, and planning decisions. "
     "By comparing inflation trends with construction cost trends, this dashboard helps users evaluate whether rising inflation is associated with higher construction expenses."
 )
+st.markdown("---")
 # Show dataset
 st.subheader("Dataset")
 st.write(filtered_df)
-
+st.markdown("---")
 # Plot
 st.subheader("Trends Over Time")
-
+st.write("This chart shows how inflation and construction costs have moved together over time.")
 plt.figure()
 plt.plot(filtered_df["year"], filtered_df["inflation_index"], label="Inflation")
 plt.plot(filtered_df["year"], filtered_df["construction_index"], label="Construction Costs")
 plt.legend()
 plt.xlabel("Year")
 plt.ylabel("Index Value")
-
+plt.title("Inflation vs Construction Costs Over Time")
+plt.grid(True, linestyle="--", alpha=0.5)
 st.pyplot(plt)
+st.markdown("---")
 st.subheader("Inflation vs Construction Costs Comparison")
-st.write("This scatter plot shows the relationship between inflation and construction costs. As inflation rises, construction costs generally increase.")
+st.write("Each point represents a year and shows the strong positive relationship between inflation and construction costs.")
 fig, ax = plt.subplots()
 ax.scatter(filtered_df["inflation_index"], filtered_df["construction_index"], color="orange")
 ax.set_xlabel("Inflation Index")
@@ -57,6 +60,7 @@ ax.set_title("Relationship Between Inflation and Construction Costs")
 ax.grid(True)
 st.pyplot(fig)
 correlation = filtered_df["inflation_index"].corr(filtered_df["construction_index"])
+st.metric("Correlation (Inflation vs Costs)", f"{correlation:.2f}")
 st.write(f"Correlation coefficient (r): {correlation:.2f}")
 
 st.write("This value indicates a strong positive relationship between inflation and construction costs.")
@@ -66,9 +70,10 @@ st.write(
     "The strongest finding from this analysis is the clear positive relationship between inflation and construction costs. "
     "As inflation increases, construction costs consistently rise as well.\n\n"
 
-    "This suggests that inflation is a major driver of cost increases in the construction industry, "
+    "These results suggest that inflation is a primary driver of cost increases in the construction industry, "
     "which directly impacts budgeting, project planning, and financial forecasting."
 )
+st.markdown("---")
 st.subheader("Results")
 
 st.write(
@@ -76,6 +81,7 @@ st.write(
     "As inflation increases, construction costs tend to rise as well, particularly in the years following 2020 where a sharp increase is observed. "
     "This indicates that inflation plays a significant role in driving construction expenses and should be carefully considered in project budgeting and planning."
 )
+st.markdown("---")
 st.subheader("Limitations & Next Steps")
 
 st.write(
