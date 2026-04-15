@@ -61,9 +61,17 @@ st.write(
 )
 
 
-st.subheader("Data and Methods")
+st.subheader("Data Collection & Preprocessing")
 
 st.write(
-    "This project uses public economic data from FRED. The datasets were cleaned by converting dates, grouping values by year, "
-    "and merging inflation and construction cost indices into one final dataset for analysis."
+    "The data used in this project was sourced from publicly available economic data from FRED (Federal Reserve Economic Data). "
+    "The dataset includes yearly inflation index values and construction cost index values.\n\n"
+
+    "Preprocessing steps included:\n"
+    "- Cleaning and standardizing column names\n"
+    "- Converting data into numerical format for analysis\n"
+    "- Handling missing or inconsistent values\n"
+    "- Merging inflation and construction datasets by year\n\n"
+
+    "These steps ensured the data was accurate, aligned, and ready for analysis and visualization."
 )
